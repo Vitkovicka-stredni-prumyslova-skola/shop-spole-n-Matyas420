@@ -1,10 +1,17 @@
 from flask import Flask, render_template
+import requests
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/myproducts')
+def getproducts():
+
+    response = requests.get('https://fakestoreapi.com/products')
+    return render_template('base.html', api = response.json())
 
 @app.route('/about')
 def about():
