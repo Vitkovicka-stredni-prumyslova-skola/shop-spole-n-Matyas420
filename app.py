@@ -13,6 +13,7 @@ def getproducts():
     response = requests.get('https://fakestoreapi.com/products')
     return render_template('base.html', api = response.json())
 
+
 @app.route('/about')
 def about():
     return render_template('about.html')
