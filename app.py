@@ -4,7 +4,7 @@ from products import product_view
 
 app = Flask(__name__)
 api_blueprint = api.API()
-app.register_blueprint = (api_blueprint.blueprint)
+app.register_blueprint(api_blueprint.blueprint)
 
 
 products_blueprint = product_view.ProductView(api_blueprint)
