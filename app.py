@@ -6,7 +6,6 @@ app = Flask(__name__)
 api_blueprint = api.API()
 app.register_blueprint(api_blueprint.blueprint)
 
-
 products_blueprint = product_view.ProductView(api_blueprint)
 app.register_blueprint(products_blueprint.blueprint)
 
